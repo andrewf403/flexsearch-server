@@ -18,8 +18,11 @@ const index_map = {};
 const connection = {};
 const state = {};
 const pool = [];
+let store = {
+    store: []
+};
 
-init(flexsearch, index_map);
+init(flexsearch, index_map, store);
 
 if(config.autosave || (config.autosave === 0)){
 
@@ -33,6 +36,7 @@ module.exports = {
     pool: pool,
     connection: connection,
     state: state,
+    store: store,
 
     master: async function(worker, message, handle){
 
@@ -77,9 +81,9 @@ module.exports = {
 
         if(config.debug){
 
-            console.log(message);
+            console.log(message);        
         }
-
+        
         switch(message.job){
 
             case "search":

@@ -122,15 +122,18 @@ const config = (function(){
 let timer = null;
 let flexsearch;
 let index_map;
+let store;
 
 module.exports = {
 
     config: config,
 
-    init: function(_flexsearch, _index_map){
+    init: function(_flexsearch, _index_map, _store){
 
         flexsearch = _flexsearch;
         index_map = _index_map;
+        store = _store;
+
     },
 
     read_from_file: function(){
@@ -145,10 +148,13 @@ module.exports = {
                 }
 
                 if(data && data.length){
+                    const jsonData = JSON.parse(data);
 
                     try{
 
-                        flexsearch.import(data);
+                        flexsearch.import(jsonData.index);
+                        store.store = jsonData.store;
+
 
                         const index = flexsearch.index;
                         const keys = Object.keys(index);
@@ -193,7 +199,7 @@ function write_to_file(){
         const json = flexsearch.export();
               json[2] = index_map;
 
-        writeFile(filename, json, function(err){
+        writeFile(filename, JSON.stringify({index: json, store: ''}), function(err){
 
             if(err){
 

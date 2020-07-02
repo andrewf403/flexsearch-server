@@ -1,5 +1,6 @@
 const { write_schedule } = require("./helper");
-const { flexsearch, pool:worker_pool, connection } = require("./handler");
+const { searchWithStore } = require("./searchWithStore");
+const { flexsearch, pool:worker_pool, connection, store } = require("./handler");
 const index_map = {};
 let worker_index = 0;
 
@@ -197,7 +198,8 @@ module.exports = {
                 }
                 else{
 
-                    res.json(await flexsearch.search(query));
+
+                    res.json(await searchWithStore(flexsearch, store, query));
                 }
             }
             catch(err){
