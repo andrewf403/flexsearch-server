@@ -1,6 +1,7 @@
 const env = require("./env");
 const { config } = require("./helper");
-const app = require("express")();
+const express = require("express");
+const app = express();
 const controller = require("./controller");
 const compression = require("compression");
 const { json } = require("body-parser");
@@ -63,15 +64,17 @@ app.use(json());
 /* Routes
 -----------------------------------------------*/
 
-app.get("/", controller.index);
-app.post("/add", controller.add_bulk);
-app.post("/add/:id/:content", controller.add);
-app.post("/update", controller.update_bulk);
-app.post("/update/:id/:content", controller.update);
-app.get("/search", controller.search);
-app.get("/search/:query", controller.search);
-app.post("/remove", controller.remove_bulk);
-app.post("/remove/:id", controller.remove);
+// app.get("/", controller.index);
+// app.post("/add", controller.add_bulk);
+// app.post("/add/:id/:content", controller.add);
+// app.post("/update", controller.update_bulk);
+// app.post("/update/:id/:content", controller.update);
+app.post("/search", controller.search);
+// app.get("/search/:query", controller.search);
+// app.post("/remove", controller.remove_bulk);
+// app.post("/remove/:id", controller.remove);
+
+app.use(express.static('public'));
 
 if(isMaster) console.info("\x1b[32m\x1b[1m",
 

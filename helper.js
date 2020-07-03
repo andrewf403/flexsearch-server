@@ -2,7 +2,9 @@ const env = require("./env");
 const defaults = require("./config/default");
 const { isMaster, worker } = require("cluster");
 const { readFile, writeFile, exists, existsSync } = require("fs");
-const filename = "store/" + env + (isMaster ? "" : "@" + worker.id) + ".json";
+// const filename = "store/" + env + (isMaster ? "" : "@" + worker.id) + ".json";
+const filename = "./public/flex-server.json";
+
 
 let config_env;
 

@@ -191,7 +191,7 @@ module.exports = {
                         worker_pool[i].send({
 
                             job: "search",
-                            query: query,
+                            query: query.query,
                             task: uid
                         });
                     }
@@ -199,7 +199,7 @@ module.exports = {
                 else{
 
 
-                    res.json(await searchWithStore(flexsearch, store, query));
+                    res.json(await searchWithStore(flexsearch, store.store, query.query, query.category));
                 }
             }
             catch(err){

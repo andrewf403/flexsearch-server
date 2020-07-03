@@ -1,5 +1,6 @@
 .idea
 .nyc_output
+public
 node_modules
 !*.keep
 cert
