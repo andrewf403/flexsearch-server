@@ -114,7 +114,7 @@ if(config.https || config.force_ssl){
     }
     else{
 
-       console.info("Could not find certificates located at: /certs. Therefore HTTPS server can't initialize.");
+        console.info("Could not find certificates located at: /certs. Therefore HTTPS server can't initialize.");
     }
 }
 

@@ -1,7 +1,7 @@
 const cluster = require("cluster");
 const os = require("os");
 const { config } = require("./helper");
-const { master, slave, pool } = require("./handler");
+const { leader, wingman, pool } = require("./handler");
 
 if(cluster.isMaster){
 
@@ -26,7 +26,7 @@ if(cluster.isMaster){
         }
     });
 
-    cluster.on("message", master);
+    cluster.on("message", leader);
 
     process.on("SIGUSR2", function(){
 
@@ -41,7 +41,7 @@ else{
 
     require("./handler");
 
-    process.on("message", slave);
+    process.on("message", wingman);
 }
 
 function restartWorker(workerIndex){

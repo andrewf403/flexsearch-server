@@ -38,7 +38,7 @@ module.exports = {
     state: state,
     store: store,
 
-    master: async function(worker, message, handle){
+    leader: async function(worker, message, handle){
 
         if(config.debug){
 
@@ -77,7 +77,7 @@ module.exports = {
         }
     },
 
-    slave: async function(message){
+    wingman: async function(message){
 
         if(config.debug){
 

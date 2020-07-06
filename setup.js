@@ -3,7 +3,8 @@ const {existsSync, mkdirSync} = require("fs");
 [
     "./store",
     "./log",
-    "./cert"
+    "./cert",
+    "./public"
 
 ].forEach(function(dir){
 
