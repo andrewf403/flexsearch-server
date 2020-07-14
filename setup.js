@@ -1,7 +1,6 @@
 const {existsSync, mkdirSync} = require("fs");
 
 [
-    "./store",
     "./log",
     "./cert",
     "./public"
