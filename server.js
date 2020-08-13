@@ -67,7 +67,8 @@ app.get("/api/v1/search-dev-info", controller.index);
 app.get("/api/v1/rereadindex", controller.updateFromDisk);
 app.post("/api/v1/search", controller.search);
 
-app.use(express.static('public'));
+console.log('Data:', config.dir);
+app.use(express.static(config.dir));
 
 console.info("\x1b[32m\x1b[1m",
 
