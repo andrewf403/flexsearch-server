@@ -8,7 +8,7 @@
     "compress": true,
     "autosave": 2000,
     "worker": "auto",
-    "dir": "/data/documentation/public"
+    "dir": "/data/documentation/liveaction-doc/public"
   },
   "client": {
     "async": false,
