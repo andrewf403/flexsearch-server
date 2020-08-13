@@ -8,7 +8,8 @@
     "compress": true,
     "autosave": 2000,
     "worker": "auto",
-    "dir": "public"
+    "dir": "public",
+    "filename": "./public/flex-server.json"
   },
   "client": {
     "async": false,

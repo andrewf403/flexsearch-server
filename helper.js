@@ -2,7 +2,7 @@ const env = require("./env");
 const defaults = require("./config/default");
 const { readFile, exists, existsSync } = require("fs");
 const { resolve } = require("path");
-const filename = "./public/flex-server.json";
+// const filename = "./public/flex-server.json";
 
 
 let config_env;
@@ -43,7 +43,8 @@ const config = (function () {
         "compress",
         "autosave",
         "worker",
-        "dir"
+        "dir",
+        "filename"
     ].forEach(function (flag) {
         const env_var = global.process.env[flag.toUpperCase()];
         defaults[flag] = (
@@ -88,7 +89,9 @@ module.exports = {
     },
 
     read_from_file: function () {
+        const filename = config.filename;
         return new Promise((resolve, reject) => {
+            console.log(config.dir, filename)
             exists(filename, function (exists) {
                 if (exists) {
                     readFile(filename, function (err, data) {
