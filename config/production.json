@@ -7,7 +7,8 @@
     "https": false,
     "compress": true,
     "autosave": 2000,
-    "worker": "auto"
+    "worker": "auto",
+    "dir": "/data/documentation/public"
   },
   "client": {
     "async": false,

@@ -42,7 +42,8 @@ const config = (function () {
         "https",
         "compress",
         "autosave",
-        "worker"
+        "worker",
+        "dir"
     ].forEach(function (flag) {
         const env_var = global.process.env[flag.toUpperCase()];
         defaults[flag] = (

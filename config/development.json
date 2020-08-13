@@ -7,7 +7,8 @@
     "https": true,
     "compress": true,
     "autosave": 2000,
-    "worker": "auto"
+    "worker": "auto",
+    "dir": "public"
   },
   "client": {
     "async": false,
