@@ -9,7 +9,7 @@
     "autosave": 2000,
     "worker": "auto",
     "dir": "/data/documentation/liveaction-doc/public",
-    "filename": "./data/documentation/liveaction-doc/public/flex-server.json"
+    "filename": "/data/documentation/liveaction-doc/public/flex-server.json"
   },
   "client": {
     "async": false,
